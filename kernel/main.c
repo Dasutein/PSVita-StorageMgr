@@ -1218,10 +1218,5 @@ int module_stop(SceSize args, void *argp) {
 }
 
 void log_write(const char *buffer, size_t length, const char *folderpath, const char *fullpath) {
-	ksceIoMkdir(folderpath, 6);
-	SceUID fd = ksceIoOpen(fullpath, SCE_O_WRONLY | SCE_O_CREAT | SCE_O_APPEND, 6);
-	if (fd < 0)
-		return;
-	ksceIoWrite(fd, buffer, length);
-	ksceIoClose(fd);
+	return;
 }
